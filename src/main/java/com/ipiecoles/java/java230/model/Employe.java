@@ -5,8 +5,15 @@ import org.joda.time.LocalDate;
 
 import java.util.Objects;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Employe")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Employe {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	private String nom;
