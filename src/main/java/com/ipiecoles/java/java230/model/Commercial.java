@@ -1,7 +1,10 @@
 package com.ipiecoles.java.java230.model;
 
+import javax.persistence.Entity;
+
 import org.joda.time.LocalDate;
 
+@Entity
 public class Commercial extends Employe {
 
 	private Double caAnnuel = 0d;

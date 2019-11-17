@@ -5,9 +5,15 @@ import org.joda.time.LocalDate;
 
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Technicien extends Employe implements Comparable<Technicien> {
 
-
+	@ManyToOne
+	@JoinColumn(name = "manager_id")
 	private Manager manager;
 
 	private Integer grade;

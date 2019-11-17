@@ -12,6 +12,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import com.ipiecoles.java.java230.model.Employe;
+import com.ipiecoles.java.java230.model.Technicien;
 import com.ipiecoles.java.java230.repository.EmployeRepository;
 
 @Component
@@ -45,7 +46,14 @@ public class MyRunner implements CommandLineRunner {
 		 * Sort.Direction.ASC, "matricule")); for (Employe e : emps) {
 		 * print(e.toString()); }
 		 */
-
+		
+		List<Employe> emps = (ArrayList)employeRepo.findAll();
+		for(Employe e: emps) {
+			print(e.toString());
+			if (e instanceof Technicien) {
+				print("Grade : " + ((Technicien)e).getGrade());
+			}
+		}
 	}
 
 	public static void print(Object t) {

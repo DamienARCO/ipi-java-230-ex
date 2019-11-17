@@ -8,9 +8,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Manager extends Employe {
 
-	private Set<Technicien> equipe = new HashSet();
+	@OneToMany(mappedBy = "manager")
+	private Set<Technicien> equipe = new HashSet<Technicien>();
 
 	public Manager(){
 
